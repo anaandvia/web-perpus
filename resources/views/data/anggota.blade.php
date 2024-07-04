@@ -20,6 +20,7 @@
             </div>
         </div>
     </div>
+    {{-- Alert --}}
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success') }}
@@ -32,7 +33,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    <!-- DataTales Example -->
+    {{-- end Alert --}}
+
+    <!-- Table -->
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -143,7 +146,6 @@
                         </div>
                         <!-- /Modal Edit -->
                         @endforeach
-                        <!-- Admin 1 -->
                     </tbody>
                 </table>
                 <!-- Modal Tambah -->
@@ -207,6 +209,8 @@
             </div>
         </div>
     </div>
+    {{-- end table --}}
+
     <script type="text/javascript">
         // Tables
         $('#dataTable').DataTable();

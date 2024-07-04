@@ -67,8 +67,9 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <form action="/logout" method="POST">
                             @csrf
-                        <button class="btn btn-primary" type="submit">Logout</button></form>
+                            <button class="btn btn-primary" type="submit">Logout</button></form>
                     </div>
                 </div>
             </div>
         </div>
+        {{-- Modal --}}

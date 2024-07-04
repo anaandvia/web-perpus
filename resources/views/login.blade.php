@@ -1,11 +1,5 @@
 {{-- <?php
 session_start();
-
-if(isset($_SESSION['level'])){
-    header("Location: ../../index.php");
-    exit;
-}
-
 ?> --}}
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +15,12 @@ if(isset($_SESSION['level'])){
     <title>{{ $title }} | Perpustakaan Nasional</title>
 
     <!-- Custom fonts for this template-->
-
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
     <!-- Custom styles for this template-->
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -63,13 +55,15 @@ if(isset($_SESSION['level'])){
                                     <form form method="POST" action="/">
                                         @csrf
                                         <div class="form-group mb-2">
-                                            <input name="no_anggota" id="no_anggota" class="form-control form-control-user @error('no_anggota') is-invalid @enderror"
-                                                placeholder="No Anggota" autofocus required value="{{ old ('no_anggota') }}">
-                                                @error('no_anggota')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
+                                            <input name="no_anggota" id="no_anggota"
+                                                class="form-control form-control-user @error('no_anggota') is-invalid @enderror"
+                                                placeholder="No Anggota" autofocus required
+                                                value="{{ old ('no_anggota') }}">
+                                            @error('no_anggota')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="form-group mb-2">
                                             <input name="password" id="password" type="password"
@@ -112,7 +106,7 @@ if(isset($_SESSION['level'])){
     </script>
     <style>
         body {
-            background-color:  rgba(28, 121, 164, 0.89);
+            background-color: rgba(28, 121, 164, 0.89);
         }
 
         #card {

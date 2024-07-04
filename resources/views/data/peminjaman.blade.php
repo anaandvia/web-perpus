@@ -20,6 +20,8 @@
             </div>
         </div>
     </div>
+
+    {{-- Alert --}}
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success') }}
@@ -32,11 +34,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+    {{-- Alert --}}
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                
+
             </div>
             <div class="table-responsive">
                 <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -61,10 +65,10 @@
                             <td>{{ $p->tgl_pinjam }}</td>
                             <td>{{ $p->tgl_kembali }}</td>
                             <td>
-                                @if($p->status == 1) 
-                                <span class="btn btn-success">Buku Di Pinjam</span>   
+                                @if($p->status == 1)
+                                <span class="btn btn-success">Buku Di Pinjam</span>
                                 @else
-                                <span class="btn btn-primary">Buku Di Kembalikan</span> 
+                                <span class="btn btn-primary">Buku Di Kembalikan</span>
                                 @endif
                             </td>
                             <td>
@@ -78,17 +82,17 @@
                                         onclick="return confirm('Ingin Menghapus Data?')"> Hapus</button>
                                 </form>
                                 @else
-                                    @if($p->status == 1) 
-                                    <span class="btn btn-success">Buku Di Pinjam</span>   
-                                    @else
-                                    <span class="btn btn-primary">Buku Di Kembalikan</span> 
-                                    @endif
+                                @if($p->status == 1)
+                                <span class="btn btn-success">Buku Di Pinjam</span>
+                                @else
+                                <span class="btn btn-primary">Buku Di Kembalikan</span>
+                                @endif
                                 @endif
                             </td>
                         </tr>
                         <!-- Modal Edit -->
-                        <div class="modal fade" id="EditPeminjaman{{ $p->id }}" tabindex="-1" aria-labelledby="ModalLabel"
-                            aria-hidden="true">
+                        <div class="modal fade" id="EditPeminjaman{{ $p->id }}" tabindex="-1"
+                            aria-labelledby="ModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -123,13 +127,9 @@
                                                     {{ $message }}
                                                 </div>
                                                 @enderror
-                                                <input type="hidden"
-                                                    class="form-control"
-                                                    id="buku_id" name="buku_id"
+                                                <input type="hidden" class="form-control" id="buku_id" name="buku_id"
                                                     value="{{ old('buku_id', $p->buku->id) }}">
-                                                <input type="hidden"
-                                                    class="form-control"
-                                                    id="stok" name="stok"
+                                                <input type="hidden" class="form-control" id="stok" name="stok"
                                                     value="{{ old('stok', ($p->buku->stok + 1)) }}">
                                             </div>
                                             <div class="form-group mb-3">

@@ -86,7 +86,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //
     }
+
+
 
     public function updateanggota(Request $request, $id)
     {

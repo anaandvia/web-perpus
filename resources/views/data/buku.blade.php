@@ -20,6 +20,8 @@
             </div>
         </div>
     </div>
+
+    {{-- Alert --}}
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success') }}
@@ -32,6 +34,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+    {{-- Alert --}}
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -94,16 +98,13 @@
                                                     @csrf
                                                     <div class="form-group mb-3">
                                                         <label for="judul_buku">Judul Buku</label>
-                                                        <input type="text"
-                                                            class="form-control"
-                                                            id="judul_buku" name="judul_buku"
-                                                            value="{{ old('judul_buku', $b->judul_buku) }}"readonly>
-                                                            <input type="hidden"
-                                                            class="form-control"
-                                                            id="stok" name="stok"
-                                                            value="{{ old('stok', $b->stok - 1) }}"readonly>
+                                                        <input type="text" class="form-control" id="judul_buku"
+                                                            name="judul_buku"
+                                                            value="{{ old('judul_buku', $b->judul_buku) }}" readonly>
+                                                        <input type="hidden" class="form-control" id="stok" name="stok"
+                                                            value="{{ old('stok', $b->stok - 1) }}" readonly>
                                                     </div>
-                                                    
+
                                                     <div class="form-group mb-3">
                                                         <label for="tgl_pinjam">Tanggal Pinjam</label>
                                                         <input type="date" data-date="" data-date-format="MMMM DD YYYY"
@@ -119,8 +120,7 @@
                                                         <label for="tgl_kembali">Tanggal Kembali</label>
                                                         <input type="date" data-date="" data-date-format="MMMM DD YYYY"
                                                             class="form-control @error('tgl_kembali') is-invalid @enderror"
-                                                            id="tgl_kembali" name="tgl_kembali"
-                                                            >
+                                                            id="tgl_kembali" name="tgl_kembali">
                                                         @error('tgl_kembali')
                                                         <div class="invalid-feedback">
                                                             {{ $message }}
@@ -206,9 +206,7 @@
                             </div>
                         </div>
                         <!-- /Modal Edit -->
-
                         @endforeach
-                        <!-- Admin 1 -->
                     </tbody>
                 </table>
                 <!-- Modal Tambah -->

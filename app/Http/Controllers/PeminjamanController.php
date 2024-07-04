@@ -48,7 +48,12 @@ class PeminjamanController extends Controller
      */
     public function store(Request $request, $id)
     {
+        //
     }
+
+
+
+
     public function peminjaman(Request $request, $buku_id)
     {
 
